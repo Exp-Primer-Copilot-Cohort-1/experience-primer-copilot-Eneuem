@@ -2,9 +2,10 @@
 const http = require('http');
 
 const server = http.createServer((req, res) => {
-    res.end("Ola from the other side");
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Hello, World!\n');
 });
 
-server.listen(8000, 'localhost', () => {    //localhost is the default value
-    console.log("Listening to the port no 8000");
+server.listen(3000, 'localhost', () => {
+    console.log('Server running at http://localhost:3000/');
 });
